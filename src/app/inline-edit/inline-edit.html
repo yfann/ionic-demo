@@ -1,13 +1,10 @@
 <div class="inline-edit">
-    <span [hidden]="!isDisplay">
+    <span class="display-text" [hidden]="!isDisplay" (click)="beginEdit(editText)">
         {{ text }}
-        <i class="icon icon-edit color-primary" title="Edit"
-            (click)="beginEdit(editText)"></i>
     </span>
-    <span [hidden]="isDisplay">
-        <input #editText type="text"
+    <span class="edit-text" [hidden]="isDisplay">
+        <input class="edit-input" #editText type="text"
             [value]="text" (keyup.enter)="editDone(editText.value)">
-        <i class="icon icon-floppy color-primary" title="Save"
-            (click)="editDone(editText.value)"></i>
+            <ion-button class="save" size="small" color="success" (click)="editDone(editText.value)">save</ion-button>
     </span>
 </div>

@@ -2,12 +2,13 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'inline-edit',
-    templateUrl: 'inline-edit.html'
+    templateUrl: 'inline-edit.html',
+    styleUrls: ['inline-edit.scss'],
 })
 export class InlineEdit {
     private isDisplay = true;
 
-    @Input() text: string;
+    @Input() text: string='';
     @Output() edit = new EventEmitter<string>();
 
     beginEdit(el: HTMLElement): void {
